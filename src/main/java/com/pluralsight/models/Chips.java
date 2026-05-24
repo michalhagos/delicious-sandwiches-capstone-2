@@ -26,4 +26,6 @@ public class Chips {
     public String getSummary() {
         return String.format("%s chips - $%.2f", type, price);
     }
+
+
 }
