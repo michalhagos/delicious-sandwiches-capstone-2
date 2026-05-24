@@ -33,6 +33,45 @@ public class Sandwich {
             this.basePrice = 8.50;
         }
     }
+    // returns the bread type of the sandwich
+    public String getBread() {
+        return bread;
+    }
+
+    // returns the size of the sandwich in inches
+    public int getSize() {
+        return size;
+    }
+
+    // returns whether the sandwich is toasted
+    public boolean isToasted() {
+        return toasted;
+    }
+
+    // returns the list of all toppings on this sandwich
+    public ArrayList<Topping> getToppings() {
+        return toppings;
+    }
+
+    // returns the base price before toppings are added
+    public double getBasePrice() {
+        return basePrice;
+    }
+    // updates the bread type
+    public void setBread(String bread) {
+        this.bread = bread;
+    }
+
+    // updates the size
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    // updates whether the sandwich is toasted
+    public void setToasted(boolean toasted) {
+        this.toasted = toasted;
+    }
+
 
 
     }
