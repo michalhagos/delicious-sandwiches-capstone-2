@@ -106,5 +106,37 @@ public class Sandwich {
         return totalPrice;
     }
 
+    // the getSummary method returns a full description of the sandwich
+    // used when displaying the order summary and writing the receipt
+    public String getSummary() {
+        // create a String Builder.
+        StringBuilder summary = new StringBuilder();
+
+        // add sandwich size and bread type
+        summary.append(size)
+                .append(" ")
+                .append(bread)
+                .append(" sandwich");
+
+        if (toasted) {
+            summary.append(" (toasted)");
+        }
+    // move to the next line
+        summary.append("\n");
+
+        // list/add every topping on the sandwich
+        for (Topping topping : toppings) {
+            summary.append("  - ")
+                    .append(topping.toString())
+                    .append("\n");
+        }
+
+        // show the total price
+        summary.append(String.format("  Price: $%.2f", getPrice()));
+        // return the completed summary
+        return summary.toString();
+    }
+
+
 }
 
