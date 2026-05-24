@@ -25,12 +25,10 @@ public class Drink {
     public String getSize() {
         return size;
     }
-
     // returns the flavor of the drink
     public String getFlavor() {
         return flavor;
     }
-
     // returns the price of the drink
     public double getPrice() {
         return price;
@@ -39,9 +37,14 @@ public class Drink {
     public void setSize(String size) {
         this.size = size;
     }
-
     // updates the flavor of the drink
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+    // getSummary method returns a readable description of the drink
+    // used when displaying the order summary and writing the receipt
+    public String getSummary() {
+        return String.format("%s %s drink - $%.2f", size, flavor, price);
+    }
+
 }
