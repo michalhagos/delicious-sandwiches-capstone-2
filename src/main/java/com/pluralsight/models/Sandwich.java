@@ -80,7 +80,16 @@ public class Sandwich {
         toppings.add(cheese);
     }
 
-
-
+    // adds a regular topping to the sandwich for free
+    public void addTopping(Topping topping) {
+        toppings.add(topping);
     }
+
+    // adds a sauce to the sandwich for free
+    public void addSauce(Topping sauce) {
+        toppings.add(sauce);
+    }
+
+
+}
 
