@@ -5,4 +5,8 @@ public class Chips {
     private String type;
     // chips are always a flat price of $1.50
     private double price = 1.50;
+    // the constructor sets the chip type. price is always $1.50 so no need to calculate it
+    public Chips(String type) {
+        this.type = type;
+    }
 }
