@@ -21,5 +21,9 @@ public class Chips {
     public void setType(String type) {
         this.type = type;
     }
-
+    // this getSummary method returns a readable description of the chips
+// used when displaying the order summary and writing the receipt
+    public String getSummary() {
+        return String.format("%s chips - $%.2f", type, price);
+    }
 }
