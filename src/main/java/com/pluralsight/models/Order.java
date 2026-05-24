@@ -29,6 +29,9 @@ public class Order {
         return chips;
     }
 
-
+    // adds a sandwich to the order
+    public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
+    }
 
 }
