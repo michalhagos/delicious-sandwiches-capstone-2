@@ -21,4 +21,27 @@ public class Drink {
             this.price = 3.00;
         }
     }
+    // returns the size of the drink
+    public String getSize() {
+        return size;
+    }
+
+    // returns the flavor of the drink
+    public String getFlavor() {
+        return flavor;
+    }
+
+    // returns the price of the drink
+    public double getPrice() {
+        return price;
+    }
+    // updates the size of the drink
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    // updates the flavor of the drink
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
 }
