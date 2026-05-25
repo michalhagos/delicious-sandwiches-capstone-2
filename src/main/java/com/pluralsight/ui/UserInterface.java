@@ -46,4 +46,48 @@ public class UserInterface {
             }
         }
     }
+    // the processNewOrder method creates a new order and shows the order screen
+// keeps running until the user checks out or cancels
+    private void processNewOrder() {
+        // create a fresh empty order
+        Order order = new Order();
+        boolean ordering = true;
+
+        while (ordering) {
+            // show the order screen menu
+            System.out.println("\n===== Order Screen =====");
+            System.out.println("1) Add Sandwich");
+            System.out.println("2) Add Drink");
+            System.out.println("3) Add Chips");
+            System.out.println("4) Checkout");
+            System.out.println("0) Cancel Order");
+            System.out.print("Enter option: ");
+
+            String choice = scanner.nextLine().trim();
+
+            switch (choice) {
+                case "1":
+                   // processAddSandwich(order);
+                    break;
+                case "2":
+                  //  processAddDrink(order);
+                    break;
+                case "3":
+                   // processAddChips(order);
+                    break;
+                case "4":
+                    // go to check out and stop the loop if confirmed
+                  //  ordering = !processCheckout(order);
+                    break;
+                case "0":
+                    // cancel the order and go back to home screen
+                    ordering = false;
+                    System.out.println("Order cancelled. Going back to home screen.");
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+
 }
