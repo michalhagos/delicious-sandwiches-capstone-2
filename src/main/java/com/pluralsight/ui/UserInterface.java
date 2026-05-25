@@ -8,5 +8,12 @@ import com.pluralsight.util.ReceiptWriter;
 import java.util.Scanner;
 
 public class UserInterface {
+    // scanner reads all user input throughout the entire app
+    private Scanner scanner;
+
+    // constructor creates the scanner when UserInterface is created
+    public UserInterface() {
+        this.scanner = new Scanner(System.in);
+    }
 
 }
