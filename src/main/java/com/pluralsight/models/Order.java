@@ -62,5 +62,37 @@ public class Order {
 
         return total;
     }
+    // the getOrderSummary method returns a full readable summary of everything in the order
+     // will be used when showing the checkout screen and writing the receipt
+    public String getOrderSummary() {
+        StringBuilder summary = new StringBuilder();
+        summary.append("===== Order Summary =====\n");
+        // list every sandwich in the order
+        if (!sandwiches.isEmpty()) {
+            summary.append("\n--- Sandwiches ---\n");
+            for (Sandwich sandwich : sandwiches) {
+                summary.append(sandwich.getSummary()).append("\n");
+            }
+        }
+        // list every drink in the order
+        if (!drinks.isEmpty()) {
+            summary.append("\n--- Drinks ---\n");
+            for (Drink drink : drinks) {
+                summary.append(drink.getSummary()).append("\n");
+            }
+        }
+        // list every chips in the order
+        if (!chips.isEmpty()) {
+            summary.append("\n--- Chips ---\n");
+            for (Chips chip : chips) {
+                summary.append(chip.getSummary()).append("\n");
+            }
+        }
 
+        // show the total price at the bottom
+        summary.append("\n*************************\n");
+        summary.append(String.format("Total: $%.2f", getTotal()));
+
+        return summary.toString();
+    }
 }
