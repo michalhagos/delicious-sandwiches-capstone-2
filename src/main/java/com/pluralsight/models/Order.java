@@ -66,7 +66,7 @@ public class Order {
      // will be used when showing the checkout screen and writing the receipt
     public String getOrderSummary() {
         StringBuilder summary = new StringBuilder();
-        summary.append("===== Order Summary =====\n");
+        summary.append("***** Order Summary *****\n");
         // list every sandwich in the order
         if (!sandwiches.isEmpty()) {
             summary.append("\n--- Sandwiches ---\n");
@@ -90,7 +90,7 @@ public class Order {
         }
 
         // show the total price at the bottom
-        summary.append("\n*************************\n");
+        summary.append("\n************************\n");
         summary.append(String.format("Total: $%.2f", getTotal()));
 
         return summary.toString();

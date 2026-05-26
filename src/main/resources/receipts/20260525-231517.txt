@@ -1,0 +1,17 @@
+===== Order Summary =====
+
+--- Sandwiches ---
+8 white sandwich (toasted)
+  - steak (extra)
+  - cheese (extra)
+  - mayo
+  Price: $8.60
+
+--- Drinks ---
+small lemonade drink - $2.00
+
+--- Chips ---
+doritos chips - $1.50
+
+*************************
+Total: $12.10
