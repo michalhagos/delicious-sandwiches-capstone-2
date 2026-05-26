@@ -161,4 +161,21 @@ public class UserInterface {
         System.out.println("\nSandwich added to your order!");
         System.out.println(sandwich.getSummary());
     }
+    // processAddDrink method asks the user for drink size and flavor
+    // adds the drink to the order
+    private void processAddDrink(Order order) {
+        System.out.println("\n--- Add a Drink ---");
+        System.out.println("Sizes available: small, medium, large");
+        System.out.print("Choose your size: ");
+        String size = scanner.nextLine().trim();
+
+        System.out.print("Choose your flavor: ");
+        String flavor = scanner.nextLine().trim();
+
+        // create the drink and add it to the order
+        Drink drink = new Drink(size, flavor);
+        order.addDrink(drink);
+
+        System.out.println("Drink added: " + drink.getSummary());
+    }
 }
