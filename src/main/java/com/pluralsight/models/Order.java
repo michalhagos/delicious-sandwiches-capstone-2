@@ -3,94 +3,49 @@ package com.pluralsight.models;
 import java.util.ArrayList;
 
 public class Order {
-    // the list of all sandwiches in this order
-    private ArrayList<Sandwich> sandwiches;
-    // the list of all drinks in this order
-    private ArrayList<Drink> drinks;
-    // the list of all chips in this order
-    private ArrayList<Chips> chips;
-    // the constructor initializes all three empty lists.
-    // when a new order is created it starts with nothing in it
+    // one single list holds everything in the order
+    // this is working because Sandwich, Drink and Chips all implement Priceable
+    private ArrayList<Priceable> orderItems;
+    // a constructor that initializes the empty order items list
     public Order() {
-        this.sandwiches = new ArrayList<>();
-        this.drinks = new ArrayList<>();
-        this.chips = new ArrayList<>();
+        this.orderItems = new ArrayList<>();
     }
-    // returns the list of all sandwiches in the order
-    public ArrayList<Sandwich> getSandwiches() {
-        return sandwiches;
-    }
-    // returns the list of all drinks in the order
-    public ArrayList<Drink> getDrinks() {
-        return drinks;
-    }
-    // returns the list of all chips in the order
-    public ArrayList<Chips> getChips() {
-        return chips;
-    }
-
     // adds a sandwich to the order
     public void addSandwich(Sandwich sandwich) {
-        sandwiches.add(sandwich);
+        orderItems.add(sandwich);
     }
     // adds a drink to the order
     public void addDrink(Drink drink) {
-        drinks.add(drink);
+        orderItems.add(drink);
     }
     // adds chips to the order
     public void addChips(Chips chips) {
-        this.chips.add(chips);
+        orderItems.add(chips);
     }
-    // getTotal method calculates and returns the total price of everything in the order
-// it adds up all sandwich prices all drink prices and all chips prices
+    // returns the full list of all items in the order
+    public ArrayList<Priceable> getOrderItems() {
+        return orderItems;
+    }
+    // this getTotal method calculates and returns the total price of everything in the order
     public double getTotal() {
-        // start total from 0
         double total = 0;
 
-        // add up all sandwich prices
-        for (Sandwich sandwich : sandwiches) {
-            total += sandwich.getPrice();
-        }
-        // add up all drink prices
-        for (Drink drink : drinks) {
-            total += drink.getPrice();
-        }
-        // add up all chips prices
-        for (Chips chip : chips) {
-            total += chip.getPrice();
+        // Now one simple loop adds up everything. no need for the other three separate loops anymore
+        for (Priceable item : orderItems) {
+            total += item.getPrice();
         }
 
         return total;
     }
     // the getOrderSummary method returns a full readable summary of everything in the order
-     // will be used when showing the checkout screen and writing the receipt
     public String getOrderSummary() {
         StringBuilder summary = new StringBuilder();
         summary.append("***** Order Summary *****\n");
-        // list every sandwich in the order
-        if (!sandwiches.isEmpty()) {
-            summary.append("\n--- Sandwiches ---\n");
-            for (Sandwich sandwich : sandwiches) {
-                summary.append(sandwich.getSummary()).append("\n");
-            }
+        // here one simple loop lists everything. no need for three separate loops anymore
+        for (Priceable item : orderItems) {
+            summary.append(item.getSummary()).append("\n");
         }
-        // list every drink in the order
-        if (!drinks.isEmpty()) {
-            summary.append("\n--- Drinks ---\n");
-            for (Drink drink : drinks) {
-                summary.append(drink.getSummary()).append("\n");
-            }
-        }
-        // list every chips in the order
-        if (!chips.isEmpty()) {
-            summary.append("\n--- Chips ---\n");
-            for (Chips chip : chips) {
-                summary.append(chip.getSummary()).append("\n");
-            }
-        }
-
-        // show the total price at the bottom
-        summary.append("\n************************\n");
+        summary.append("*************************\n");
         summary.append(String.format("Total: $%.2f", getTotal()));
 
         return summary.toString();
