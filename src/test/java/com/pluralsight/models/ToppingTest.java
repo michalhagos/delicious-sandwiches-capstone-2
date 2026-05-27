@@ -53,10 +53,8 @@ class ToppingTest {
     public void getPrice_should_returnThirtyCents_forExtraCheeseOn4InchSandwich() {
         // arrange
         Topping extraCheese = new Topping("swiss", "cheese", true);
-
         // act
         double price = extraCheese.getPrice(4);
-
         // assert
         assertEquals(0.30, price);
     }
