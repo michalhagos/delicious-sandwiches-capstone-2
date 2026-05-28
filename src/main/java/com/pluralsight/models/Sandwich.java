@@ -2,7 +2,7 @@ package com.pluralsight.models;
 
 import java.util.ArrayList;
 
-public class Sandwich implements Priceable{
+public class Sandwich implements Priceable {
     // the type of bread chosen by the customer
     private String bread;
     // the size of the sandwich in inches
@@ -11,7 +11,6 @@ public class Sandwich implements Priceable{
     private boolean toasted;
     // the list of all toppings on this sandwich
     private ArrayList<Topping> toppings;
-
     // the starting price of the sandwich based on size only.topping prices get added on top of this
     private double basePrice;
 
@@ -123,7 +122,7 @@ public class Sandwich implements Priceable{
         if (toasted) {
             summary.append(" (toasted)");
         }
-    // move to the next line
+        // move to the next line
         summary.append("\n");
 
         // list/add every topping on the sandwich

@@ -1,0 +1,17 @@
+***** Order Summary *****
+8 white sandwich (toasted)
+  - bacon
+  - cheddar
+  - lettuce
+  - tomato
+  - ranch
+  Price: $10.50
+8 white sandwich (toasted)
+  - steak
+  - american
+  - peppers
+  - mayo
+  Price: $10.50
+medium lemonade drink - $2.50
+*************************
+Total: $23.50

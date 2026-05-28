@@ -21,9 +21,9 @@ public class UserInterface {
 
         while (running) {
             // show the home screen menu
-            System.out.println("\n===================================");
-            System.out.println("   Welcome to DELICIOUS-SANDWICHES!");
-            System.out.println("=================================== ");
+            System.out.println("\n=========================================");
+            System.out.println("   Welcome to MMM DELICIOUS-SANDWICHES!");
+            System.out.println("========================================= ");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
             System.out.print("Enter option: ");
@@ -38,7 +38,7 @@ public class UserInterface {
                 case "0":
                     // exit the application
                     running = false;
-                    System.out.println("\nThank you for visiting DELICIOUS-SANDWICHES! Goodbye!");
+                    System.out.println("\nThank you for visiting MMM DELICIOUS-SANDWICHES! Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");

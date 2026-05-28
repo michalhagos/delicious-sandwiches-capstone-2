@@ -7,12 +7,14 @@ public class Topping {
     private String type;
     // whether the customer wants extra of this topping
     private boolean extra;
+
     // constructor sets all three fields when a new topping is created
     public Topping(String name, String type, boolean extra) {
         this.name = name;
         this.type = type;
         this.extra = extra;
     }
+
     // returns the name of the topping
     public String getName() {
         return name;
@@ -27,6 +29,7 @@ public class Topping {
     public boolean isExtra() {
         return extra;
     }
+
     // updates the name of the topping
     public void setName(String name) {
         this.name = name;
@@ -41,6 +44,7 @@ public class Topping {
     public void setExtra(boolean extra) {
         this.extra = extra;
     }
+
     // the getPrice method calculates the price of this topping based on the sandwich size
     public double getPrice(int size) {
 
@@ -48,7 +52,6 @@ public class Topping {
         if (type.equalsIgnoreCase("regular") || type.equalsIgnoreCase("sauce")) {
             return 0.00;
         }
-
         // meat pricing based on sandwich size
         if (type.equalsIgnoreCase("meat")) {
             if (extra) {
@@ -63,7 +66,6 @@ public class Topping {
                 if (size == 12) return 3.00;
             }
         }
-
         // cheese pricing based on sandwich size
         if (type.equalsIgnoreCase("cheese")) {
             if (extra) {
@@ -78,10 +80,10 @@ public class Topping {
                 if (size == 12) return 2.25;
             }
         }
-
         // default return 0 means if nothing matched
         return 0.00;
     }
+
     // returns a readable string of the topping
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-# DELICIOUS-SANDWICH Shop
+# Delicious-Sandwich-Shop
 
 A console based Java application that simulates a custom sandwich shop ordering system. Customers can build their own sandwiches, choose drinks and chips, and generate a receipt at checkout.
 
